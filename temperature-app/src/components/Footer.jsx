@@ -1,7 +1,9 @@
 import React from "react";
 import MyButton from "./MyButton"; // import custom button <Button></Button>
 
-const Footer = ({ onDecrease, onIncrease }) => {
+const Footer = ({ onDecrease, onIncrease, onReset }) => {
+	
+	
 	return (
 		<div className="flex justify-center w-full gap-10 p-4 bg-gray-200 rounded shadow-md">
 			<button
@@ -31,6 +33,14 @@ const Footer = ({ onDecrease, onIncrease }) => {
 				textColor={"text-yellow-400"}
 			>
 				{"+ 1°C"}
+			</MyButton>
+
+			<MyButton
+				onClick={onReset}
+				btnColor={"bg-orange-700"}
+				textColor={"text-white"}
+			>
+				{"Reset"}
 			</MyButton>
 		</div>
 	);

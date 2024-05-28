@@ -11,17 +11,37 @@ const App = () => {
 	const increaseTemperature = () => setTemperature((prevTemp) => prevTemp + 1);
 	const toggleIsOn = () => setIsOn(!isOn);
 
+	// const toggleIsOn2 = () => {
+	// 	setIsOn(!isOn);
+	// 	setTemperature(25);
+	// };
+
+	// const reset = () => {
+	// 	setTemperature(25);
+	// 	setIsOn(true);
+	// };
+
 	return (
 		<div className="flex flex-col items-center justify-center h-screen bg-gray-100">
 			<Header
 				temperature={temperature}
 				isOn={isOn}
 				toggleIsOn={toggleIsOn}
+				// toggleIsOn={toggleIsOn2}
 			/>
+
 			<Content temperature={temperature} />
+
+			{/* {isOn ? (
+				<Content temperature={temperature} />
+			) : (
+				<div className="flex items-center justify-center w-full p-6 mb-4 bg-white rounded shadow-md h-2/3"></div>
+			)} */}
+
 			<Footer
 				onDecrease={decreaseTemperature}
 				onIncrease={increaseTemperature}
+				// onReset={reset}
 			/>
 		</div>
 	);
