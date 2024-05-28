@@ -1,28 +1,37 @@
 import React from "react";
-import Button from "./Button";
+import MyButton from "./MyButton"; // import custom button <Button></Button>
 
 const Footer = ({ onDecrease, onIncrease }) => {
 	return (
-		<div className="w-full flex justify-center gap-10 p-4 bg-gray-200 rounded shadow-md">
+		<div className="flex justify-center w-full gap-10 p-4 bg-gray-200 rounded shadow-md">
 			<button
 				onClick={onDecrease}
-				className="bg-red-500 text-white px-8 py-2 rounded shadow mr-2"
+				className="px-8 py-2 mr-2 text-white bg-red-500 rounded shadow"
 			>
 				Down
 			</button>
 			<button
 				onClick={onIncrease}
-				className="bg-green-500 text-white px-8 py-2 rounded shadow"
+				className="px-8 py-2 text-white bg-green-500 rounded shadow"
 			>
 				Up
 			</button>
-			{/* <Button
-				onClick={onIncrease}
+
+			<MyButton
+				// onClick={onIncrease}
 				btnColor={"bg-blue-500"}
 				textColor={"text-white"}
 			>
-				{" + 1"}
-			</Button> */}
+				{"default MyButton : alert()"}
+			</MyButton>
+
+			<MyButton
+				onClick={onIncrease}
+				btnColor={"bg-gray-800"}
+				textColor={"text-yellow-400"}
+			>
+				{"+ 1°C"}
+			</MyButton>
 		</div>
 	);
 };
